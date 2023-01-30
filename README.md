@@ -1,2 +1,2 @@
 # Singleton
-Изучал паттерн Singleton
+Изучал пример паттерна Singleton

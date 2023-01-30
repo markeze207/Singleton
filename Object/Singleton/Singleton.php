@@ -1,0 +1,49 @@
+<?php
+
+namespace Singleton;
+
+class Singleton
+{
+    private static ?string $date = null;
+
+    private static ?string $message = null;
+
+    private static ?Singleton $instance = null;
+
+    public static function getInstance(): self // Singleton
+    {
+        if(!self::$instance)
+        {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public static function setDate(string $string): void
+    {
+        self::$date = $string;
+    }
+
+    public static function getDate(): ?string
+    {
+        if(!self::$date)
+        {
+            return 'date null';
+        }
+        return self::$date;
+    }
+
+    public static function setMessage(string $string): void
+    {
+        self::$message = $string;
+    }
+
+    public static function getMessage(): string
+    {
+        if(!self::$message)
+        {
+            return 'message null';
+        }
+        return self::$message;
+    }
+}

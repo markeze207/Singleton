@@ -11,12 +11,14 @@ class Singleton
     private static ?Singleton $instance = null;
 
 
-    private function __construct() {
-    }
-    private function __clone() {
-    }
-    private function __wakeup() {
-    }
+    private function __construct() {}
+
+    private function __clone() {}
+
+    public function __sleep() {}
+
+    public function __wakeup() {}
+
     public static function getInstance(): self // Singleton
     {
         if(!self::$instance)
